@@ -7,7 +7,7 @@
   },
 
 
-  "remarks": "MITM-DomainFronting_v22",
+  "remarks": "MITM-DomainFronting_v23",
 
   "version": {
     "min": "26.2.6"
@@ -22,6 +22,11 @@
       "0": {
         "uplinkOnly": 0,
         "downlinkOnly": 0
+      },
+      "1": {
+        "uplinkOnly": 0,
+        "downlinkOnly": 0,
+        "connIdle": 6
       }
     }
   },
@@ -40,7 +45,7 @@
       {
         "tag": "no-filter-dns",
         "address": "h2c://1.1.1.1/dns-query",
-        "timeoutMs": 15000,
+        "timeoutMs": 6000,
         "finalQuery": true
       },
       {
@@ -145,7 +150,10 @@
 	},
     {
       "tag": "dns-out",
-      "protocol": "dns"
+      "protocol": "dns",
+      "settings": {
+        "userLevel": 1
+      }
     },
 	{
       "tag": "redirect-out-h11",
